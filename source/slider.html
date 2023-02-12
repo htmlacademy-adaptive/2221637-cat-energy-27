@@ -1,0 +1,104 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Слайдер До-После</title>
+</head>
+<body>
+  <style>
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 100px;
+}
+
+.slider img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+.container {
+	width: 280px;
+	margin: 0 auto;
+}
+
+.slider {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+}
+
+.before {
+	position: absolute;
+	left: 0;
+	top: 0;
+	overflow: hidden;
+	z-index: 2;
+	width: 50%;
+	height: 100%;
+}
+
+.change {
+	position: absolute;
+	left: 50%;
+	top: 0;
+	z-index: 10;
+	width: 3px;
+	height: 100%;
+	background-color: #666666;
+	-ms-touch-action: pan-y;
+	touch-action: pan-y;
+}
+
+.change::after {
+	content: " ";
+  display: inline-block;
+	position: absolute;
+	left: calc(50% - 25px);
+	top: 50%;
+	width: 50px;
+	height: 50px;
+  mask-image: url("/img/svg/11.svg");
+  mask-size: cover;
+  background-color:aqua;
+}
+
+@media (max-width: 1050px) {
+	body {
+		padding: 20px;
+	}
+
+.bb::after{
+	content: "";
+  display: inline-block;
+	width: 50px;
+	height: 50px;
+  mask-image: url("../img/svg/11.svg#11");
+  background-color:aqua;
+  object-fit: cover;
+  }
+}
+  </style>
+	<div class="container">
+		<div class="slider">
+			<div class="before">
+				<img src="img/content/slider-before.jpg" alt="">
+			</div>
+			<div class="after">
+				<img src="img/content/slider-after.jpg" alt="">
+			</div>
+			<div class="change"></div>
+		</div>
+	</div>
+  <div class="bb"></div>
+  <script src="js/slider.js"></script>
+</body>
+</html>
