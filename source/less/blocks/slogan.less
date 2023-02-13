@@ -130,7 +130,7 @@
     z-index: -1;
     height: 100%;
     width: 100%;
-    background-image: url("../img/content/slogan-background-mobile.jpg");
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-mobile.jpg");
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
@@ -143,29 +143,10 @@
       display: block;
       width: 50%;
       margin-left: 50%;
-      background-image: url("../img/content/slogan-background-desktop.jpg");
-    }
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-    background-color: #5eaa2f;
-    opacity: 0.85;
-
-    @media (min-width: @vp-768) {
-      display: none;
-    }
-
-    @media (min-width: @vp-1440) {
-      display: block;
-      width: 50%;
-      margin-left: 50%;
-      height: 100%;
+      background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-desktop.jpg");
+      background-position: 100% 50%;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
   }
 }
