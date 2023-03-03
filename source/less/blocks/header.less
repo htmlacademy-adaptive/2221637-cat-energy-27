@@ -2,20 +2,22 @@
   @media (min-width: @vp-768) {
     display: flex;
     justify-content: space-between;
-    padding: 2px 30px 0;
+    padding-top: 2px;
   }
 
   @media (min-width: @vp-1440) {
-    display: flex;
+    display: grid;
     justify-content: space-between;
-    padding: 53px 110px 0;
+    padding-top: 53px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
   }
 }
 
 .header__logo {
   margin-top: 10px;
   margin-left: calc(50% - 90px - 101px / 2);
-  margin-bottom: 17px;
+  margin-bottom: 18px;
   width: 190px;
   height: 37px;
 

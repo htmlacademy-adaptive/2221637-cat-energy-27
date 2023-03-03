@@ -1,7 +1,7 @@
 .button {
   font-family: @ff-oswald;
-  font-size: 14px;
-  line-height: 18px;
+  font-size: (@fs-default * 14 / 16);
+  line-height: 1.29;
   font-weight: 400;
   color: @color-white;
   text-transform: uppercase;
@@ -15,15 +15,17 @@
   cursor: pointer;
 
   &:hover {
-    background-color: #5eaa2f;
+    background-color: @color-limeade;
   }
 
   &:active {
-    background-color: #5eaa2f;
-    color: #8ec36d;
+    background-color: @color-limeade;
+    color: fade(@color-white, 30);
   }
 
   @media (min-width: @vp-768) {
     padding: 14px 26px;
+    font-size: @fs-default;
+    line-height: 1;
   }
 }
