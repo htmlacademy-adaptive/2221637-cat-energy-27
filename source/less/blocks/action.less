@@ -1,0 +1,37 @@
+.action {
+  background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg.jpg");
+  background-size: cover;
+  background-position: 30%;
+  min-height: 290px;
+
+  @media (min-width: @vp-768) {
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg-tablet.jpg");
+    min-height: 200px;
+    background-size: cover;
+  }
+}
+
+.action__background {
+  padding: 59px 60px 43px;
+  width: 100%;
+  min-height: 290px;
+}
+
+.action__text {
+  font-family: @ff-lato;
+  font-size: @fs-default;
+  line-height: 1.25;
+  text-align: center;
+  color: @color-white;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+
+  @media (min-width: @vp-768) {
+    flex-direction: column;
+  }
+
+  &::before {
+    content: url("../img/svg/icon-gift.svg");
+  }
+}

@@ -1,0 +1,130 @@
+.benefits {
+  margin-top: 20px;
+  margin-bottom: 49px;
+
+  @media (min-width: @vp-768) {
+    margin-top: 45px;
+    margin-bottom: 47px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-top: 71px;
+    margin-bottom: 69px;
+  }
+}
+
+.benefits__header {
+  margin-bottom: 42px;
+
+  @media (min-width: @vp-768) {
+    margin-bottom: 32px;
+  }
+}
+
+.benefits__title {
+  font-family: @ff-oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 1.11;
+  color: @color-black;
+
+  @media (min-width: @vp-768) {
+    font-size: 60px;
+    line-height: 1;
+  }
+}
+
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  @media (min-width: @vp-768) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    counter-reset: css-counter 0;
+    gap: 100px 5%;
+  }
+
+  @media (min-width: @vp-1440) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.benefits__item {
+  list-style-type: none;
+  position: relative;
+  min-height: 54px;
+  margin-left: 80px;
+  max-width: 210px;
+
+  @media (min-width: @vp-768) {
+    margin: 111px 0 0 0;
+    min-height: 92px;
+    margin-right: 79px;
+    max-width: none;
+  }
+
+  &::before {
+    content: " ";
+    width: 60px;
+    height: 60px;
+    background-color: @color-apple;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -80px;
+
+    @media (min-width: @vp-768) {
+      width: 80px;
+      height: 80px;
+      margin: -111px 0 0 0;
+    }
+  }
+
+  &--leaf::before {
+    content: url("../img/svg/icon-leaf.svg");
+  }
+
+  &--powder::before {
+    content: url("../img/svg/icon-powder.svg");
+  }
+
+  &--scales::before {
+    content: url("../img/svg/icon-scales.svg");
+  }
+
+  &--cutlery::before {
+    content: url("../img/svg/icon-cutlery.svg");
+  }
+
+  &::after {
+    @media (min-width: @vp-768) {
+      counter-increment: css-counter 1;
+      content: counter(css-counter);
+      position: absolute;
+      top: 0;
+      right: -70px;
+      z-index: -1;
+      font-size: 280px;
+      line-height: 0;
+      color: @color-white-smoke;
+    }
+  }
+}
+
+.benefits__text {
+  font-family: @ff-lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: @color-charcoal;
+
+  @media (min-width: @vp-768) {
+    font-size: @fs-default;
+    line-height: 1.5;
+  }
+}

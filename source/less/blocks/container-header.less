@@ -1,0 +1,29 @@
+.container-header {
+  border-bottom: 1px solid @color-gainsboro;
+
+  @media (min-width: @vp-768) {
+    border-bottom: 0;
+  }
+
+  &--image {
+    position: relative;
+    border-bottom: 0;
+
+    &::before {
+      @media (min-width: @vp-1440) {
+
+        content: " ";
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 50%;
+        height: 100%;
+        z-index: -2;
+        background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-desktop.jpg");
+        background-position: 100% 50%;
+        background-size: cover;
+        background-repeat: no-repeat;
+      }
+    }
+  }
+}

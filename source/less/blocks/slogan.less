@@ -1,0 +1,161 @@
+.slogan {
+  display: grid;
+  grid-template-areas:
+    "text"
+    "image"
+    "button";
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+
+  @media (min-width: @vp-768) {
+    margin-top: 62px;
+    grid-template-areas:
+      "text"
+      "button"
+      "image";
+  }
+
+  @media (min-width: @vp-1440) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "text image"
+      "button image";
+    max-width: @mw;
+    margin: 62px auto 0 auto;
+    gap: 20px 0;
+  }
+}
+
+.slogan__title {
+  margin-bottom: 25px;
+  text-align: center;
+  color: @color-white;
+  font-family: @ff-oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: @vp-768) {
+    font-size: 60px;
+    line-height: 60px;
+    color: @color-black;
+    text-align: left;
+    margin: 0 auto 41px auto;
+    max-width: 570px;
+  }
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+  }
+}
+
+.slogan__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: @ff-oswald;
+  text-align: center;
+  color: @color-white;
+  text-transform: uppercase;
+
+  @media (min-width: @vp-768) {
+    font-size: 20px;
+    line-height: 20px;
+    color: @color-black;
+    text-align: left;
+    margin: 0 auto 0 auto;
+    max-width: 570px;
+  }
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+  }
+}
+
+.slogan__button {
+  order: 1;
+  width: 100%;
+
+  @media (min-width: @vp-768) {
+    order: 0;
+    width: 244px;
+  }
+}
+
+.slogan__button-wrapper {
+  margin: 0 auto 0 auto;
+  width: 100%;
+  max-width: 570px;
+  grid-area: button;
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+    margin-bottom: 185px;
+  }
+}
+
+.slogan__image {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 270px;
+  display: block;
+  margin-top: -135px;
+  left: calc(50% - 140px);
+  grid-area: image;
+
+  @media (min-width: @vp-768) {
+    width: 709px;
+    height: 609px;
+    left: 0;
+    top: -83px;
+    margin: 0 auto;
+    z-index: -1;
+  }
+
+  @media (min-width: @vp-1440) {
+    width: 552px;
+    height: auto;
+    margin-left: -200px;
+    top: 0;
+  }
+}
+
+.slogan__text-container {
+  position: relative;
+  z-index: 1;
+  padding-top: 27px;
+  width: 100%;
+  padding-bottom: calc(135px + 29px);
+  grid-area: text;
+
+  @media (min-width: @vp-768) {
+    padding: 0;
+    margin-bottom: 49px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin: 0;
+    padding: 0;
+  }
+}
+

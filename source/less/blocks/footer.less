@@ -1,0 +1,125 @@
+.footer {
+  background-color: @color-white-smoke;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  margin-top: auto;
+
+  @media (min-width: @vp-768) {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  @media (min-width: @vp-1440) {
+    padding-top: 72px;
+    padding-bottom: 72px;
+  }
+}
+
+.footer__wraper {
+  @media (min-width: @vp-768) {
+    display: grid;
+    grid-auto-flow: column;
+    gap: 20px;
+  }
+}
+
+// LOGO
+.footer__logo-img {
+  margin: auto;
+  height: 24px;
+  width: 128px;
+  display: block;
+
+  @media (min-width: @vp-768) {
+    height: 26px;
+    width: 143px;
+    margin: 0;
+  }
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
+}
+
+
+// SOCIAL
+.footer__social {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-top: 1px solid @color-gainsboro;
+  border-bottom: 1px solid @color-gainsboro;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  list-style: none;
+  gap: 24px;
+  padding: 20px;
+
+  @media (min-width: @vp-768) {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    gap: 26px;
+  }
+}
+
+.footer__social-icon {
+  display: inline-block;
+  fill: @color-dim-gray;
+
+  &:hover {
+    fill: @color-apple;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+}
+
+// COPYRIGHT
+.footer__copyright {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  text-decoration: none;
+  align-content: center;
+  align-items: center;
+  max-width: 281px;
+  margin: 0 auto;
+  pointer-events: none;
+  justify-self: end;
+
+  @media (min-width: @vp-768) {
+    gap: 28px;
+    margin: 0;
+    pointer-events: auto;
+    max-width: unset;
+  }
+
+  &:hover > .footer__copyright-logo {
+    fill: @color-apple;
+  }
+
+  &:active > * {
+    opacity: 0.3;
+  }
+}
+
+.footer__copyright-text {
+  font-family: @ff-lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: @fs-default;
+  line-height: 19px;
+  color: @color-charcoal;
+  pointer-events: auto;
+}
+
+.footer__copyright-logo {
+  fill: @color-dim-gray;
+  pointer-events: auto;
+}
