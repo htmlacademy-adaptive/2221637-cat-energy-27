@@ -2,10 +2,11 @@
   background-color: @color-whisper;
   overflow: hidden;
   padding-top: 25px;
-  padding-bottom: 40px;
+  padding-bottom: 42px;
 
   @media (min-width: @vp-768) {
     padding-top: 43px;
+    padding-bottom: 100px;
     border-top: 1px solid @color-whisper-dark;
     background-color: transparent;
   }
@@ -14,7 +15,7 @@
     border-top: none;
     background-color: @color-whisper;
     padding-top: 0;
-    padding-bottom: 100px;
+    padding-bottom: 73px;
   }
 }
 
@@ -34,6 +35,10 @@
 
   @media (min-width: @vp-768) {
     margin-bottom: 63px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-bottom: 0;
   }
 
   @media (min-width: @vp-1440) {
@@ -62,12 +67,12 @@
   font-style: normal;
   font-weight: 400;
   font-size: 36px;
-  line-height: 1.11;
+  line-height: 40px;
   color: @color-black;
 
   @media (min-width: @vp-768) {
     font-size: 60px;
-    line-height: 1;
+    line-height: 60px;
   }
 }
 
@@ -76,13 +81,19 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.29;
+  line-height: 18px;
   color: @color-charcoal;
   grid-area: text;
 
   @media (min-width: @vp-768) {
     font-size: @fs-default;
-    line-height: 1.5;
+    line-height: 24px;
+    margin-bottom: 35px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-top: 68px;
+    margin-right: 178px;
   }
 }
 
@@ -91,9 +102,11 @@
   flex-direction: row;
   gap: 32px;
   grid-area: statistics-list;
+  margin-bottom: -11px;
 
   @media (min-width: @vp-768) {
     width: calc(70% - 60px - 100px);
+    gap: 43px;
   }
 }
 
@@ -111,15 +124,18 @@
   font-style: normal;
   font-weight: 400;
   font-size: 24px;
-  line-height: 1;
+  line-height: 24px;
   text-align: center;
   color: @color-black;
   width: 100%;
   padding-top: 14px;
   padding-bottom: 18px;
+  text-transform: uppercase;
 
   @media (min-width: @vp-768) {
-    min-width: 180px;
+    min-width: 162px;
+    font-size: 30px;
+    line-height: 37px;
   }
 }
 
@@ -128,7 +144,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 12px;
-  line-height: 1;
+  line-height: 12px;
   display: flex;
   align-items: center;
   text-align: center;
@@ -142,7 +158,7 @@
 
   @media (min-width: @vp-768) {
     font-size: 14px;
-    line-height: 1;
+    line-height: 14px;
     background-color: @color-white;
     width: auto;
     padding: 0 9px;
@@ -158,7 +174,7 @@
   font-style: normal;
   font-weight: 400;
   font-size: 14px;
-  line-height: 1.43;
+  line-height: 20px;
   text-align: center;
   text-transform: uppercase;
   color: @color-black;
@@ -166,7 +182,7 @@
   @media (min-width: @vp-768) {
     min-width: 120px;
     font-size: 20px;
-    line-height: 1.45;
+    line-height: 29px;
     text-align: end;
     margin-top: 9px;
   }
@@ -175,17 +191,29 @@
 .example__cost {
   text-align: center;
   grid-area: cost;
+  text-transform: uppercase;
+  font-family: @ff-oswald;
+  font-size: 14px;
+  line-height: 20px;
 
   @media (min-width: @vp-768) {
     display: flex;
     flex-direction: column;
     align-items: end;
+    font-size: 20px;
+    line-height: 20px;
+    margin-top: 11px;
   }
 
   @media (min-width: @vp-1440) {
     flex-direction: row;
-    gap: 63px;
+    gap: 66px;
+    margin-top: 14px;
   }
+}
+
+.example__cost-number {
+  margin-top: 9px;
 }
 
 .example__description {
@@ -201,6 +229,7 @@
     grid-template-areas:
       "text text"
       "statistics-list cost";
+    margin-bottom: 102px;
   }
 
   @media (min-width: @vp-1440) {
@@ -211,7 +240,8 @@
       "cost";
     justify-items: start;
     align-content: center;
-    gap: 69px;
+    gap: 36px;
+    margin-bottom: 0;
   }
 }
 
@@ -282,6 +312,9 @@
   }
 
   @media (min-width: @vp-1440) {
+    margin-bottom: 11px;
+    margin-left: 50px;
+
     &::before {
       display: none;
     }
@@ -303,6 +336,8 @@
   max-width: none;
   position: relative;
   z-index: 3;
+  width: 280px;
+  height: 256px;
 
   &--before {
     clip-path: polygon(0 0, 50% 0, 50% 100%, 0% 100%);
@@ -312,5 +347,10 @@
     clip-path: polygon(100% 0, 50% 0, 50% 100%, 100% 100%);
     left: -100%;
     position: relative;
+  }
+
+  @media (min-width: @vp-768) {
+    width: 560px;
+    height: 512px;
   }
 }

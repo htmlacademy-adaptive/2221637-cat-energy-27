@@ -23,6 +23,11 @@
         background-position: 100% 50%;
         background-size: cover;
         background-repeat: no-repeat;
+
+        @media (min-resolution: 2dppx) {
+          background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-desktop@2x.jpg");
+          background-size: cover;
+        }
       }
     }
   }
