@@ -1,10 +1,4 @@
 .programs {
-  margin-top: 20px;
-
-  @media (min-width: @vp-768) {
-    margin-top: 0;
-  }
-
   @media (min-width: @vp-1440) {
     margin-top: 82px;
   }
@@ -12,7 +6,7 @@
 
 .programs__list {
   display: grid;
-  gap: 20px;
+  gap: 22px;
   list-style-type: none;
   width: 100%;
 
@@ -30,9 +24,11 @@
   background-color: @color-white-smoke;
   padding: 24px 20px 22px;
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   @media (min-width: @vp-768) {
-    padding: 77px 316px 57px 52px;
+    padding: 77px 316px 57px 53px;
   }
 
   @media (min-width: @vp-1440) {
@@ -49,57 +45,102 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 2px;
 
-    @media (max-width: calc(@vp-1440 - 1px)) and (min-width: @vp-768) {
+    @media (min-width: @vp-768) {
       width: 200px;
       height: 200px;
-      right: 92px;
+      right: 62px;
+      top: 92px;
     }
 
     @media (min-width: @vp-1440) {
       width: 100px;
       height: 100px;
+      right: auto;
+      top: auto;
     }
   }
 
-  &--slim::before {
-    content: url("../img/svg/cat-slim.svg");
+  &::after {
+    content: " ";
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &--slim::after {
+    background-image: url("../img/sprite.svg#cat-slim");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 36px;
+    height: 50px;
+    top: 21px;
+    left: 29px;
+    background-size: 36px;
 
     @media (min-width: @vp-768) {
-      content: url("../img/svg/cat-slim-tablet.svg");
+      width: 140px;
+      height: 194px;
+      top: 81px;
+      left: auto;
+      right: 92px;
+      background-size: 140px 194px;
     }
 
     @media (min-width: @vp-1440) {
-      content: url("../img/svg/cat-slim-desktop.svg");
+      width: 70px;
+      height: 97px;
+      top: 41px;
+      left: 67px;
+      background-size: 70px 97px;
     }
   }
 
-  &--pro::before {
-    content: url("../img/svg/cat-pro.svg");
+  &--pro::after {
+    background-image: url("../img/sprite.svg#cat-pro");
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 67px;
+    height: 28px;
+    top: 35px;
+    left: 13px;
+    background-size: 67px 28px;
 
     @media (min-width: @vp-768) {
-      content: url("../img/svg/cat-pro-tablet.svg");
+      width: 268px;
+      height: 112px;
+      top: 135px;
+      left: auto;
+      right: 28px;
+      background-size: 268px 112px;
     }
 
     @media (min-width: @vp-1440) {
-      content: url("../img/svg/cat-pro-desktop.svg");
+      width: 134px;
+      height: 56px;
+      top: 67px;
+      left: 33px;
+      background-size: 134px 56px;
     }
   }
 }
 
 .programs__title {
   padding-left: 71px;
-  margin-bottom: 29px;
+  margin-bottom: 32px;
   padding-top: 8px;
   font-family: @ff-oswald;
   font-weight: 400;
   font-size: 24px;
-  line-height: 37px;
+  line-height: 32px;
   text-transform: uppercase;
   color: @color-black;
 
   @media (min-width: @vp-768) {
     padding-left: 0;
+    padding-top: 0;
     margin-bottom: 24px;
     font-size: 36px;
     line-height: 36px;
@@ -108,6 +149,7 @@
   @media (min-width: @vp-1440) {
     padding-left: 162px;
     margin-bottom: 73px;
+    margin-top: 30px;
   }
 }
 
@@ -118,8 +160,8 @@
   line-height: 18px;
   color: @color-charcoal;
   padding-right: 13px;
-  margin-bottom: 23px;
-  padding-bottom: 19px;
+  margin-bottom: 19px;
+  padding-bottom: 22px;
   border-bottom: 1px solid @color-gainsboro;
 
   @media (min-width: @vp-768) {
@@ -127,7 +169,11 @@
     margin: 0 0 52px;
     padding: 0;
     font-size: @fs-default;
-    line-height: 1.5;
+    line-height: 24px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-bottom: 28px;
   }
 }
 
@@ -139,21 +185,28 @@
   text-transform: uppercase;
   color: @color-black;
   text-decoration: none;
+  margin-top: auto;
 
-  @media (min-width: @vp-1440) {
+  @media (min-width: @vp-768) {
     font-size: 20px;
     line-height: 30px;
   }
 
   &::after {
     content: "";
-    background-image: url("../img/svg/arrow.svg");
+    background-image: url("../img/sprite.svg#arrow");
     background-position-x: -8px;
     width: 24px;
     height: 12px;
+    background-size: 32px 12px;
     display: inline-block;
     transition: 0.5s;
     margin-left: 15px;
+
+    @media (min-width: @vp-768) {
+      margin-left: 26px;
+      height: 15px;
+    }
   }
 
   &:hover::after {

@@ -1,10 +1,23 @@
 .heading-page {
-  margin-top: 27px;
-  margin-bottom: 20px;
+  margin-top: 26px;
+  margin-bottom: 39px;
+
+  @media (min-width: @vp-768) {
+    margin-top: 55px;
+    margin-bottom: 66px;
+
+    &--form {
+      padding-left: @distance-30 + 39px;
+    }
+  }
 
   @media (min-width: @vp-1440) {
-    margin-top: 27px;
-    margin-bottom: 66px;
+    margin-top: 76px;
+    margin-bottom: 65px;
+
+    &--form {
+      padding-left: @distance-110;
+    }
   }
 }
 
@@ -17,10 +30,23 @@
   @media (min-width: @vp-768) {
     font-size: 60px;
     line-height: 60px;
+    margin-bottom: 54px;
   }
 
   @media (min-width: @vp-1440) {
     margin-bottom: 56px;
+  }
+
+  &--catalog {
+    margin-bottom: 40px;
+
+    @media (min-width: @vp-768) {
+      margin-bottom: 91px;
+    }
+
+    @media (min-width: @vp-1440) {
+      margin-bottom: 79px;
+    }
   }
 }
 

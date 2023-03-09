@@ -21,8 +21,12 @@
 
   @media (min-width: @vp-768) {
     display: flex;
-    gap: 33px;
+    gap: 36px;
     justify-content: flex-end;
+
+    &--form {
+      gap: 34px;
+    }
   }
 
   @media (min-width: @vp-1440) {
@@ -31,7 +35,7 @@
 }
 
 .navigation__item {
-  padding: 22px 20px 24px;
+  padding: 22px 20px 19px;
   text-align: center;
   border-bottom: 1px solid @color-whisper-dark;
 
@@ -65,10 +69,19 @@
     font-weight: 400;
     font-size: 18px;
     line-height: 24px;
+    padding-bottom: 7px;
+
+    &--form {
+      padding-bottom: 4px;
+    }
 
     &--current {
       border-bottom: 2px solid @color-apple;
-      padding-bottom: 10px;
+    }
+
+    &--catalog {
+      padding-bottom: 4px;
+      padding-left: 1px;
     }
   }
 
@@ -85,10 +98,12 @@
 
 .navigation__toggle {
   position: absolute;
-  right: @dist-20;
-  top: -42px;
+  right: @distance-20;
+  top: -46px;
   cursor: pointer;
   z-index: 1;
+  border: 0;
+  background-color: transparent;
 
   &::before,
   &--is-open::before {
@@ -101,13 +116,13 @@
   &::before {
     width: 23px;
     height: 22px;
-    background-image: url("../img/svg/icon-menu.svg");
+    background-image: url("../img/sprite.svg#icon-menu");
   }
 
   &--is-open::before {
     width: 22px;
     height: 22px;
-    background-image: url("../img/svg/icon-cross.svg");
+    background-image: url("../img/sprite.svg#icon-cross");
   }
 
   &:hover {

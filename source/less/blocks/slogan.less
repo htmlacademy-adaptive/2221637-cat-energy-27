@@ -8,12 +8,17 @@
   width: 100%;
   position: relative;
 
+  @media (max-width: (@vp-1440 - 1px)) {
+    padding: 0;
+  }
+
   @media (min-width: @vp-768) {
-    margin-top: 62px;
+    margin: 55px auto 0 auto;
     grid-template-areas:
       "text"
       "button"
       "image";
+    max-width: @vp-768 - @distance-30 * 2;
   }
 
   @media (min-width: @vp-1440) {
@@ -21,9 +26,11 @@
     grid-template-areas:
       "text image"
       "button image";
-    max-width: @mw;
+    max-width: @max-width;
     margin: 62px auto 0 auto;
     gap: 20px 0;
+    min-height: 520px;
+    grid-auto-rows: min-content;
   }
 }
 
@@ -67,6 +74,7 @@
     text-align: left;
     margin: 0 auto 0 auto;
     max-width: 570px;
+    padding-left: 3px;
   }
 
   @media (min-width: @vp-1440) {
@@ -77,22 +85,32 @@
 .slogan__button {
   order: 1;
   width: 100%;
+  font-size: 14px;
 
   @media (min-width: @vp-768) {
     order: 0;
     width: 244px;
+    font-size: 20px;
+    margin-left: 91px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-left: 80px;
   }
 }
 
 .slogan__button-wrapper {
-  margin: 0 auto 0 auto;
   width: 100%;
-  max-width: 570px;
+  max-width: calc(100% - @distance-20 * 2);
   grid-area: button;
+  margin: 0 auto;
+
+  @media (min-width: @vp-768) {
+    margin: 0;
+  }
 
   @media (min-width: @vp-1440) {
     max-width: none;
-    margin-bottom: 185px;
   }
 }
 
@@ -102,42 +120,54 @@
   width: 280px;
   height: 270px;
   display: block;
-  margin-top: -135px;
+  margin-top: -136px;
   left: calc(50% - 140px);
   grid-area: image;
+  margin-bottom: 6px;
 
   @media (min-width: @vp-768) {
     width: 709px;
     height: 609px;
     left: 0;
     top: -83px;
-    margin: 0 auto;
+    margin: 0 auto -83px auto;
     z-index: -1;
   }
 
   @media (min-width: @vp-1440) {
     width: 552px;
     height: auto;
-    margin-left: -200px;
-    top: 0;
+    margin-left: -165px;
+    top: -33px;
+    position: absolute;
   }
 }
 
 .slogan__text-container {
   position: relative;
   z-index: 1;
-  padding-top: 27px;
+  padding: 26px @distance-20 calc(135px + 29px) @distance-20;
+  margin: 0 auto;
   width: 100%;
-  padding-bottom: calc(135px + 29px);
   grid-area: text;
+  aspect-ratio: 320 / 302;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 
   @media (min-width: @vp-768) {
     padding: 0;
     margin-bottom: 49px;
+    aspect-ratio: auto;
+    display: block;
+    padding-left: 36px;
+  }
 
-    &::before {
-      display: none;
-    }
+  @media (min-width: @vp-1440) {
+    padding-left: 80px;
+    padding-right: 33px;
+    margin-top: 50px;
+    margin-bottom: 30px;
   }
 
   &::before {
@@ -151,11 +181,15 @@
     background-repeat: no-repeat;
     background-position: 50% 50%;
     background-size: cover;
-  }
+    margin-left: -@distance-20;
 
-  @media (min-width: @vp-1440) {
-    margin: 0;
-    padding: 0;
+    @media (min-resolution: 2dppx) {
+      background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-mobile@2x.jpg");
+      background-size: cover;
+    }
+
+    @media (min-width: @vp-768) {
+      display: none;
+    }
   }
 }
-
