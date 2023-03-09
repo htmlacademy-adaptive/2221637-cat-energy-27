@@ -1,0 +1,152 @@
+.navigation {
+  position: absolute;
+  width: 100%;
+  z-index: 3;
+  background-color: @color-white;
+
+  @media (min-width: @vp-768) {
+    margin-top: 16px;
+    position: static;
+    background-color: transparent;
+  }
+}
+
+.navigation__list {
+  display: none;
+  list-style: none;
+
+  &--visible {
+    display: block;
+  }
+
+  @media (min-width: @vp-768) {
+    display: flex;
+    gap: 36px;
+    justify-content: flex-end;
+
+    &--form {
+      gap: 34px;
+    }
+  }
+
+  @media (min-width: @vp-1440) {
+    flex-wrap: wrap;
+  }
+}
+
+.navigation__item {
+  padding: 22px 20px 19px;
+  text-align: center;
+  border-bottom: 1px solid @color-whisper-dark;
+
+  &--first-item {
+    border-top: 1px solid @color-whisper-dark;
+  }
+
+  @media (min-width: @vp-768) {
+    border: none;
+    padding: 0;
+  }
+}
+
+.navigation__link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: @color-black;
+  text-decoration: none;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: @vp-768) {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    padding-bottom: 7px;
+
+    &--form {
+      padding-bottom: 4px;
+    }
+
+    &--current {
+      border-bottom: 2px solid @color-apple;
+    }
+
+    &--catalog {
+      padding-bottom: 4px;
+      padding-left: 1px;
+    }
+  }
+
+  @media (min-width: @vp-1440) {
+    font-size: 20px;
+    line-height: 30px;
+
+    &--light {
+      color: @color-white;
+      border-color: @color-white;
+    }
+  }
+}
+
+.navigation__toggle {
+  position: absolute;
+  right: @distance-20;
+  top: -46px;
+  cursor: pointer;
+  z-index: 1;
+  border: 0;
+  background-color: transparent;
+
+  &::before,
+  &--is-open::before {
+    content: " ";
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+  }
+
+  &::before {
+    width: 23px;
+    height: 22px;
+    background-image: url("../img/sprite.svg#icon-menu");
+  }
+
+  &--is-open::before {
+    width: 22px;
+    height: 22px;
+    background-image: url("../img/sprite.svg#icon-cross");
+  }
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: @vp-768) {
+    display: none;
+  }
+}
+
+.navigation--no-js {
+  display: inline;
+  position: relative;
+}
+
+.navigation--no-js .navigation__toggle {
+  display: none;
+}
+
+.navigation--no-js .navigation__list {
+  display: block;
+}

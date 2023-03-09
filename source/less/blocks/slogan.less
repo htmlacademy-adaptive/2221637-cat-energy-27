@@ -1,0 +1,195 @@
+.slogan {
+  display: grid;
+  grid-template-areas:
+    "text"
+    "image"
+    "button";
+  margin-bottom: 20px;
+  width: 100%;
+  position: relative;
+
+  @media (max-width: (@vp-1440 - 1px)) {
+    padding: 0;
+  }
+
+  @media (min-width: @vp-768) {
+    margin: 55px auto 0 auto;
+    grid-template-areas:
+      "text"
+      "button"
+      "image";
+    max-width: @vp-768 - @distance-30 * 2;
+  }
+
+  @media (min-width: @vp-1440) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "text image"
+      "button image";
+    max-width: @max-width;
+    margin: 62px auto 0 auto;
+    gap: 20px 0;
+    min-height: 520px;
+    grid-auto-rows: min-content;
+  }
+}
+
+.slogan__title {
+  margin-bottom: 25px;
+  text-align: center;
+  color: @color-white;
+  font-family: @ff-oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: @vp-768) {
+    font-size: 60px;
+    line-height: 60px;
+    color: @color-black;
+    text-align: left;
+    margin: 0 auto 41px auto;
+    max-width: 570px;
+  }
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+  }
+}
+
+.slogan__text {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  font-family: @ff-oswald;
+  text-align: center;
+  color: @color-white;
+  text-transform: uppercase;
+
+  @media (min-width: @vp-768) {
+    font-size: 20px;
+    line-height: 20px;
+    color: @color-black;
+    text-align: left;
+    margin: 0 auto 0 auto;
+    max-width: 570px;
+    padding-left: 3px;
+  }
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+  }
+}
+
+.slogan__button {
+  order: 1;
+  width: 100%;
+  font-size: 14px;
+
+  @media (min-width: @vp-768) {
+    order: 0;
+    width: 244px;
+    font-size: 20px;
+    margin-left: 91px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-left: 80px;
+  }
+}
+
+.slogan__button-wrapper {
+  width: 100%;
+  max-width: calc(100% - @distance-20 * 2);
+  grid-area: button;
+  margin: 0 auto;
+
+  @media (min-width: @vp-768) {
+    margin: 0;
+  }
+
+  @media (min-width: @vp-1440) {
+    max-width: none;
+  }
+}
+
+.slogan__image {
+  position: relative;
+  z-index: 2;
+  width: 280px;
+  height: 270px;
+  display: block;
+  margin-top: -136px;
+  left: calc(50% - 140px);
+  grid-area: image;
+  margin-bottom: 6px;
+
+  @media (min-width: @vp-768) {
+    width: 709px;
+    height: 609px;
+    left: 0;
+    top: -83px;
+    margin: 0 auto -83px auto;
+    z-index: -1;
+  }
+
+  @media (min-width: @vp-1440) {
+    width: 552px;
+    height: auto;
+    margin-left: -165px;
+    top: -33px;
+    position: absolute;
+  }
+}
+
+.slogan__text-container {
+  position: relative;
+  z-index: 1;
+  padding: 26px @distance-20 calc(135px + 29px) @distance-20;
+  margin: 0 auto;
+  width: 100%;
+  grid-area: text;
+  aspect-ratio: 320 / 302;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  @media (min-width: @vp-768) {
+    padding: 0;
+    margin-bottom: 49px;
+    aspect-ratio: auto;
+    display: block;
+    padding-left: 36px;
+  }
+
+  @media (min-width: @vp-1440) {
+    padding-left: 80px;
+    padding-right: 33px;
+    margin-top: 50px;
+    margin-bottom: 30px;
+  }
+
+  &::before {
+    content: " ";
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-mobile.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+    margin-left: -@distance-20;
+
+    @media (min-resolution: 2dppx) {
+      background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/slogan-background-mobile@2x.jpg");
+      background-size: cover;
+    }
+
+    @media (min-width: @vp-768) {
+      display: none;
+    }
+  }
+}

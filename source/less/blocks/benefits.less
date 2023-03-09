@@ -1,0 +1,150 @@
+.benefits {
+  margin-top: 20px;
+  margin-bottom: 56px;
+
+  @media (min-width: @vp-768) {
+    margin-top: 45px;
+    margin-bottom: 83px;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-top: 71px;
+    margin-bottom: 83px;
+  }
+}
+
+.benefits__header {
+  margin-bottom: 42px;
+
+  @media (min-width: @vp-768) {
+    margin-bottom: 72px;
+  }
+}
+
+.benefits__title {
+  font-family: @ff-oswald;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 36px;
+  line-height: 40px;
+  color: @color-black;
+
+  @media (min-width: @vp-768) {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 26px;
+
+  @media (min-width: @vp-768) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    counter-reset: css-counter 0;
+    gap: 114px 8.5%;
+  }
+
+  @media (min-width: @vp-1440) {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 114px 6.5%;
+  }
+}
+
+.benefits__item {
+  list-style-type: none;
+  position: relative;
+  min-height: 54px;
+  margin-left: 80px;
+  max-width: 210px;
+
+  @media (min-width: @vp-768) {
+    margin: 111px 79px 0 0;
+    min-height: 92px;
+    max-width: none;
+  }
+
+  @media (min-width: @vp-1440) {
+    margin-right: 3px;
+    min-height: unset;
+    max-width: none;
+  }
+
+  &::before {
+    content: " ";
+    width: 60px;
+    height: 60px;
+    background-color: @color-apple;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -80px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @media (min-width: @vp-768) {
+      width: 80px;
+      height: 80px;
+      margin: -111px 0 0 0;
+    }
+  }
+
+  &--leaf::before {
+    background-image: url("../img/sprite.svg#icon-leaf");
+    background-size: auto 28px;
+
+    @media (min-width: @vp-768) {
+      background-size: auto 28px;
+    }
+  }
+
+  &--powder::before {
+    background-image: url("../img/sprite.svg#icon-powder");
+    background-size: auto 29px;
+  }
+
+  &--scales::before {
+    background-image: url("../img/sprite.svg#icon-scales");
+    background-size: auto 30px;
+  }
+
+  &--cutlery::before {
+    background-image: url("../img/sprite.svg#icon-cutlery");
+    background-size: auto 31px;
+  }
+
+  &::after {
+    @media (min-width: @vp-768) {
+      counter-increment: css-counter 1;
+      content: counter(css-counter);
+      position: absolute;
+      top: -10px;
+      right: -3px;
+      z-index: -1;
+      font-size: 280px;
+      line-height: 0;
+      color: @color-white-smoke;
+    }
+  }
+
+  &:first-child::after {
+    right: 17px;
+  }
+}
+
+.benefits__text {
+  font-family: @ff-lato;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: @color-charcoal;
+
+  @media (min-width: @vp-768) {
+    font-size: @fs-default;
+    line-height: 24px;
+  }
+}

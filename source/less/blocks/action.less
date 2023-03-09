@@ -1,0 +1,77 @@
+.action {
+  background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg.jpg");
+  background-size: cover;
+  background-position: 30%;
+  min-height: 290px;
+  padding: 187px 51px 43px 48px;
+  width: 100%;
+  position: relative;
+
+  @media (min-resolution: 2dppx) {
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg@2x.jpg");
+  }
+
+  @media (min-width: @vp-768) {
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg-tablet.jpg");
+    min-height: 200px;
+    padding-top: 70px;
+    padding-left: 423px;
+
+    @media (min-resolution: 2dppx) {
+      background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg-tablet@2x.jpg");
+      background-size: cover;
+    }
+  }
+
+  @media (min-width: @vp-1440) {
+    background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg-desktop.jpg");
+    padding: 188px 40px 50px 40px;
+
+    @media (min-resolution: 2dppx) {
+      background: linear-gradient(fade(@color-apple, 85%), fade(@color-apple, 85%)), url("../img/content/action-bg-desktop@2x.jpg");
+      background-size: cover;
+    }
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 78px;
+    height: 80px;
+    mask: url("../img/sprite.svg#icon-gift");
+    background-color: @color-white;
+    opacity: 1;
+    left: 50%;
+    top: 99px;
+    transform: translate(-50%, -50%);
+
+    @media (min-width: @vp-768) {
+      left: 119px;
+      top: 98px;
+    }
+
+    @media (min-width: @vp-1440) {
+      left: 50%;
+    }
+  }
+}
+
+.action__text {
+  font-family: @ff-lato;
+  font-size: @fs-default;
+  line-height: 20px;
+  text-align: center;
+  color: @color-white;
+  display: flex;
+  flex-direction: column;
+  gap: 61px;
+
+  @media (min-width: @vp-768) {
+    max-width: 185px;
+    text-align: left;
+  }
+
+  @media (min-width: @vp-1440) {
+    text-align: center;
+  }
+}

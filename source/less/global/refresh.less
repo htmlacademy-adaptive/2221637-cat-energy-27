@@ -1,0 +1,23 @@
+body {
+  min-width: @vp-320;
+  font-family: @ff-oswald;
+  font-weight: 400;
+  font-style: normal;
+  color: @color-black;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  &::after,
+  &::before {
+    box-sizing: border-box;
+  }
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
